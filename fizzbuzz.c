@@ -3,29 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmaria- <brmaria-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 17:42:25 by brmaria-          #+#    #+#             */
-/*   Updated: 2025/05/23 18:33:38 by brmaria-         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:54:38 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-void    ft_putnbr(int i)
+void    ft_putnbr(int n)
 {
-    char    c;
-    if (i < 0)
-    {
-       write(1, "-", 1);
-        i *= (-1); 
-    }
-    if (i > 9)
-    {
-        ft_putnbr(i / 10);
-        ft_putnbr(i % 10);
-    }
-    c = i + '0';
-    write (1, &c, 1);
+	if(n > 9)
+		ft_putnbr(n / 10);
+	write(1,&"0123456789"[n % 10], 1);
 }
 
 int main(void)
