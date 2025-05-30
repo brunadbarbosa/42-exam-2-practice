@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brmaria- <brmaria-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brmaria- <brmaria-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 11:59:11 by brmaria-          #+#    #+#             */
-/*   Updated: 2025/05/25 17:35:29 by brmaria-         ###   ########.fr       */
+/*   Updated: 2025/05/26 11:35:49 by brmaria-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 int main(int argc, char **argv)
 {
     int i;
@@ -40,9 +41,11 @@ int main(int argc, char **argv)
             }
             else
             {
-                write(1, &argv[1])
+                write(1, &argv[1][i], 1);
             }
+			i++;
         }
     }
+	write(1, "\n", 1);
     return (0);
 }
